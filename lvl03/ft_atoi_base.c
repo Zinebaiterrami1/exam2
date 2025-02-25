@@ -21,12 +21,14 @@ int	ft_atoi_base(const char *str, int str_base)
     while(str[i])
     {
         nb = nb * str_base;
-        if(str[i] >= 'a' && str[i] <= 'z')
+        if(str[i] >= 'a' && str[i] <= 'f')
             nb += str[i] - 87;
-        else if(str[i] >= 'A' && str[i] <= 'Z')
+        else if(str[i] >= 'A' && str[i] <= 'F')
             nb += str[i] - 55;
         else if(str[i] >= '0' && str[i] <= '9')
             nb += str[i] - 48;
+        else
+            return(0);
         i++;
     }
     return (nb * sign);
